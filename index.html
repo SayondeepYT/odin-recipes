@@ -5,7 +5,7 @@
   <title>Odin Recipes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Font -->
+  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
@@ -22,13 +22,11 @@
       transition: 0.3s;
     }
 
-    /* 🌙 Dark Mode */
     body.dark {
       background: #121212;
       color: #eee;
     }
 
-    /* HEADER */
     .hero {
       text-align: center;
       padding: 70px 20px;
@@ -36,16 +34,6 @@
       color: white;
     }
 
-    .hero h1 {
-      font-size: 3rem;
-    }
-
-    .hero p {
-      margin-top: 10px;
-      opacity: 0.9;
-    }
-
-    /* CONTROLS */
     .controls {
       display: flex;
       justify-content: center;
@@ -72,14 +60,6 @@
       font-weight: 600;
     }
 
-    /* SECTION */
-    .section-title {
-      text-align: center;
-      margin: 30px 0;
-      font-size: 1.5rem;
-    }
-
-    /* CARDS */
     .recipe-container {
       display: flex;
       justify-content: center;
@@ -123,19 +103,12 @@
       transform: scale(1.1);
     }
 
-    /* FOOTER */
     footer {
       text-align: center;
       padding: 20px;
       background: #222;
       color: white;
       margin-top: 40px;
-    }
-
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
     }
 
   </style>
@@ -146,29 +119,18 @@
   <!-- HERO -->
   <header class="hero">
     <h1>🍽️ Odin Recipes</h1>
-    <p>Discover simple and delicious recipes</p>
+    <p>Dynamic Recipe App</p>
   </header>
 
   <!-- CONTROLS -->
   <div class="controls">
     <input type="text" id="search" placeholder="Search recipes...">
-    <button onclick="toggleDark()">🌙 Toggle Mode</button>
+    <button onclick="toggleDark()">🌙 Mode</button>
   </div>
 
   <!-- RECIPES -->
- <div class="recipe-container" id="recipes">
+  <div class="recipe-container" id="recipes"></div>
 
-  <a href="recipes/Fish_Curry.html" class="card">
-    <img src="Recipes Images/Fish_Curry.jpg" alt="Fish Curry">
-    <h2>Fish Curry</h2>
-  </a>
-
-  <a href="recipes/lasagna.html" class="card">
-    <img src="Recipes Images/Lasagna.jpg" alt="Lasagna">
-    <h2>Lasagna</h2>
-  </a>
-
-</div>
   <!-- FOOTER -->
   <footer>
     <p>© 2026 Sayondeep | Built with ❤️</p>
@@ -176,21 +138,63 @@
 
   <!-- JS -->
   <script>
-    function toggleDark() {
-      document.body.classList.toggle("dark");
+    const recipes = [
+      {
+        name: "Fish Curry",
+        image: "Recipes Images/Fish_Curry.jpg",
+        link: "recipes/Fish_Curry.html"
+      },
+      {
+        name: "Lasagna",
+        image: "Recipes Images/Lasagna.jpg",
+        link: "recipes/lasagna.html"
+      }
+    ];
+
+    const container = document.getElementById("recipes");
+
+    function displayRecipes(data) {
+      container.innerHTML = "";
+
+      data.forEach(recipe => {
+        const card = document.createElement("a");
+        card.href = recipe.link;
+        card.className = "card";
+
+        card.innerHTML = `
+          <img src="${recipe.image}" alt="${recipe.name}">
+          <h2>${recipe.name}</h2>
+        `;
+
+        container.appendChild(card);
+      });
     }
 
-    const searchInput = document.getElementById("search");
-    const cards = document.querySelectorAll(".card");
+    displayRecipes(recipes);
 
-    searchInput.addEventListener("keyup", function () {
+    // SEARCH
+    document.getElementById("search").addEventListener("input", function () {
       const value = this.value.toLowerCase();
 
-      cards.forEach(card => {
-        const title = card.innerText.toLowerCase();
-        card.style.display = title.includes(value) ? "block" : "none";
-      });
+      const filtered = recipes.filter(r =>
+        r.name.toLowerCase().includes(value)
+      );
+
+      displayRecipes(filtered);
     });
+
+    // DARK MODE (SYNCED)
+    function toggleDark() {
+      document.body.classList.toggle("dark");
+      localStorage.setItem("theme",
+        document.body.classList.contains("dark") ? "dark" : "light"
+      );
+    }
+
+    if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark");
+    }
+
   </script>
 
 </body>
