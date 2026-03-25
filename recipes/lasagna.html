@@ -1,69 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Odin Recipes</title>
+  <meta charset="UTF-8">
+  <title>Lasagna</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: #f5f5f5;
+      color: #333;
+      transition: 0.3s;
+    }
+
+    /* DARK MODE */
+    body.dark {
+      background: #121212;
+      color: #eee;
+    }
+
+    body.dark .container {
+      background: #1e1e1e;
+    }
+
+    body.dark .back {
+      background: #eee;
+      color: black;
+    }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+      background: linear-gradient(135deg, #ff9966, #ff5e62);
+      color: white;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    /* CONTAINER */
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      margin-top: 20px;
+      color: #ff5e62;
+    }
+
+    ul, ol {
+      padding-left: 20px;
+      line-height: 1.6;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    /* TOP BAR */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    /* BUTTONS */
+    .back, .toggle {
+      text-decoration: none;
+      padding: 8px 15px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    .back {
+      background: #333;
+      color: white;
+    }
+
+    .toggle {
+      background: #ff5e62;
+      color: white;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #222;
+      color: white;
+      margin-top: 40px;
+    }
+
+  </style>
 </head>
+
 <body>
-    <h1>Lasagna</h1>
-    <center><img src="../Recipes Images/Lasagna.jpg" height="310 width="310"></center>
 
-    <div class="A"> 
-    <h2>How to Make Lasagna</h2>
-    
-    <p><strong>Making lasagna can be time-consuming, but the results are well worth the wait. You'll find a detailed ingredient list and step-by-step instructions in the recipe below, but let's go over the basics:
-    </strong></p>
+  <!-- HERO -->
+  <header class="hero">
+    <h1>🍝 Lasagna</h1>
+  </header>
+
+  <div class="container">
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+      <a href="../index.html" class="back">⬅ Back</a>
+      <button class="toggle" onclick="toggleDark()">🌙 Mode</button>
     </div>
 
-    <div class="B">
-        <h2>Lasagna Ingredients</h2>
-        <p><strong> Allrecipes community adores this lasagna recipe because it's incredibly customizable, so you can easily alter the ingredient list to suit your needs. If you want to stay true to the original recipe, though, these are the ingredients you'll need to add to your grocery list:
-        </strong></p>
+    <!-- IMAGE -->
+    <img src="../Recipes Images/Lasagna.jpg" alt="Lasagna">
 
-            <ol type="i">
-                <li><strong>Meat:</strong> This super meaty lasagna has sweet Italian sausage and lean ground beef.</li>
-                <li><strong>Onion and garlic:</strong>An onion and two cloves of garlic are cooked with the meat to add tons of flavor.</li>
-                <li><strong>Tomato products:</strong> You'll need a can of crushed tomatoes, two cans of tomato sauce, and two cans of tomato paste.</li>
-                <li><strong>Sugar:</strong> Two tablespoons of white sugar add subtle sweetness and enhance the flavor of the sauce.</li>
-                <li><strong>Spices and seasonings: </strong>This lasagna recipe is flavored with fresh parsley, dried basil leaves, salt, Italian seasoning, fennel seeds, and black pepper.</li>
-                <li><strong>Lasagna noodles:</strong> Use store-bought or homemade lasagna noodles.</li>
-                <li><strong>Cheeses: </strong>Parmesan, mozzarella, and ricotta cheese make this lasagna extra decadent.</li>
-                <li><strong>Egg: </strong>An egg helps bind the ricotta so it doesn't ooze out of the lasagna when you cut into it.</li>
-            </ol>
-    </div>
-    <div class="C">
-        <h3>How to Make Lasagna Step-By-Step</h3>
-        <p><strong>Here's a very brief overview of what you can expect when you make homemade lasagna:</strong></p>
-    
-            <ol>
-                
-                <li>Make the meat sauce.</li>
-                <li>Cook the noodles.</li>
-                <li>Make the ricotta mixture.</li>
-                <li>Layer the lasagna according to the recipe instructions.</li>
-                <li>Cover with foil and bake.</li>
-                <li>Let the lasagna rest before serving.</li>
-            </ol>
+    <!-- INTRO -->
+    <h2>📖 About This Dish</h2>
+    <p>
+      Lasagna is a classic Italian dish made with layers of pasta, rich meat sauce,
+      creamy ricotta, and melted cheese. It’s hearty, flavorful, and perfect for family meals.
+    </p>
 
-    </div>
-    </div class="D">
-        <h3>How to Layer Lasagna</h3>
-        <p><strong>The detailed layering instructions can be found in the recipe below, but this is the order you'll follow:</strong></p>
-        <ol>
-            <li>Meat sauce</li>
-            <li>Noodles</li>
-            <li>Ricotta mixture</li>
-            <li>Mozzarella slices</li>
-            <li>Meat sauce</li>
-            <li>Parmesan cheese</li>
-            <li>Repeat the layers, then top with the remaining Parmesan.</li>
-        </ol>
-    </div>        
-    <div class="E">
-            <h3>How Long to Cook Lasagna</h3>
-            <p><strong>The assembled lasagna should take about 50 minutes to cook in an oven preheated to 375 degrees F. Cover it with foil for the first 25 minutes, then let it cook uncovered for the final 25 minutes. Also, it's important to let the lasagna rest at room temperature for about 15 minutes before you cut into it.</strong></p>
-    </div>    
-      
+    <!-- INGREDIENTS -->
+    <h2>🧂 Ingredients</h2>
+    <ol>
+      <li><strong>Meat:</strong> Italian sausage and ground beef</li>
+      <li><strong>Onion & Garlic:</strong> Adds rich flavor</li>
+      <li><strong>Tomato Products:</strong> Crushed tomatoes, sauce, paste</li>
+      <li><strong>Sugar:</strong> Enhances sauce flavor</li>
+      <li><strong>Spices:</strong> Basil, parsley, salt, pepper</li>
+      <li><strong>Noodles:</strong> Lasagna sheets</li>
+      <li><strong>Cheese:</strong> Parmesan, mozzarella, ricotta</li>
+      <li><strong>Egg:</strong> Helps bind cheese mixture</li>
+    </ol>
+
+    <!-- STEPS -->
+    <h2>👨‍🍳 Cooking Steps</h2>
+    <ol>
+      <li>Prepare the meat sauce.</li>
+      <li>Boil the lasagna noodles.</li>
+      <li>Prepare ricotta mixture.</li>
+      <li>Layer the ingredients.</li>
+      <li>Cover and bake.</li>
+      <li>Let it rest before serving.</li>
+    </ol>
+
+    <!-- LAYERING -->
+    <h2>🧱 Layering Order</h2>
+    <ol>
+      <li>Meat sauce</li>
+      <li>Noodles</li>
+      <li>Ricotta mixture</li>
+      <li>Mozzarella</li>
+      <li>Repeat layers</li>
+      <li>Top with Parmesan</li>
+    </ol>
+
+    <!-- COOK TIME -->
+    <h2>⏱ Cooking Time</h2>
+    <p>
+      Bake at 375°F (190°C) for about 50 minutes.
+      Cover for the first 25 minutes, then uncover.
+      Let it rest for 15 minutes before serving.
+    </p>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Sayondeep | Built with ❤️</p>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    function toggleDark() {
+      document.body.classList.toggle("dark");
+      localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+    }
+
+    if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark");
+    }
+  </script>
+
 </body>
+
 </html>
