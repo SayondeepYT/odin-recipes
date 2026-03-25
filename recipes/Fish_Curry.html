@@ -1,22 +1,109 @@
 <!DOCTYPE html>
+<html lang="en">
 
-<html>
-  <head>
-    <title>Fish Curry</title>
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <title>Fish Curry</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- There are 3 types of Lists in HTML ,Like Unordered,Ordered and Description Lists -->
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <body>
-    <h1>Fish Curry</h1>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
 
-    <img src="../Recipes Images/Fish_Curry.jpg" height="300" width="310">
-    <h3><strong>This is the ingredients list for Fish Curry</strong></h3>
+    /* HEADER */
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+      background: linear-gradient(135deg, #ff9966, #ff5e62);
+      color: white;
+    }
 
-    <!-- We need <ul></ul> (Unordered List) tags to create unordered lists 
-        and between those we need <li></li> (List Items) tag -->
-    <!-- Unordered List is a example of like Shopping lists 
-        which don't have any order but you nee to do it all -->
+    .hero h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    /* CONTAINER */
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      margin-top: 20px;
+      color: #ff5e62;
+    }
+
+    ul, ol {
+      padding-left: 20px;
+      line-height: 1.6;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    /* BACK BUTTON */
+    .back {
+      display: inline-block;
+      margin-bottom: 15px;
+      text-decoration: none;
+      color: white;
+      background: #333;
+      padding: 8px 15px;
+      border-radius: 8px;
+    }
+
+    .back:hover {
+      background: #000;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #222;
+      color: white;
+      margin-top: 40px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <h1>🐟 Fish Curry</h1>
+  </header>
+
+  <div class="container">
+
+    <!-- BACK BUTTON -->
+    <a href="../index.html" class="back">⬅ Back to Home</a>
+
+    <!-- IMAGE -->
+    <img src="../Recipes Images/Fish_Curry.jpg" alt="Fish Curry">
+
+    <!-- INGREDIENTS -->
+    <h2>🧂 Ingredients</h2>
     <ul>
       <li>Oil</li>
       <li>Fish</li>
@@ -27,75 +114,33 @@
       <li>Potato</li>
     </ul>
 
-    <h4>Ordered List</h4>
-    <h5>How to make Fish Curry</h5>
-
-    <!-- We need <ol></ol> (Ordered List) tags to create 
-        Ordered lists and between those we need <li></li> (List Items) tag -->
-    <!-- Ordered List is a example of like a step by step process where 1,2,3 numbers are added 
-        unlike Unoredred Lists where only dots are there -->
+    <!-- STEPS -->
+    <h2>👨‍🍳 Cooking Steps</h2>
     <ol>
-      <li>Take the oil in a pot and warm it.</li>
-      <li>Slice the Onion in pieces.</li>
-      <li>After warming the oil put the pieces of onions and cook it.</li>
-      <li>While cooking take the pieces of fishes and put it ina pot.</li>
-      <li>Mix Salt and turmeric as your taste suggests.</li>
-      <li>
-        You need to add the fishe in pot and cook it until it gives a red vibes
-      </li>
-      <li>Put the slices of potatoes in the pot and cook it.</li>
-      <li>
-        Lastly put water and taste for accurate taste , you can add extra salt
-        for good taste
-      </li>
-    </ol>
-    <h5>Same list in roman numbers</h5>
-
-    <!-- We can also change the numbers into A,B,C or other things by adding type ="" -->
-    <ol type="i">
-      <li>Take the oil in a pot and warm it.</li>
-      <li>Slice the Onion in pieces.</li>
-      <li>After warming the oil put the pieces of onions and cook it.</li>
-      <li>While cooking take the pieces of fishes and put it ina pot.</li>
-      <li>Mix Salt and turmeric as your taste suggests.</li>
-      <li>
-        You need to add the fishe in pot and cook it until it gives a red vibes
-      </li>
-      <li>Put the slices of potatoes in the pot and cook it.</li>
-      <li>
-        Lastly put water and taste for accurate taste, you can add extra salt
-        for good taste
-      </li>
+      <li>Heat oil in a pot.</li>
+      <li>Slice onions.</li>
+      <li>Add onions and cook until golden.</li>
+      <li>Add fish pieces.</li>
+      <li>Add salt and turmeric.</li>
+      <li>Cook until fish turns reddish.</li>
+      <li>Add potato slices.</li>
+      <li>Add water and adjust seasoning.</li>
     </ol>
 
-    <h4>Description List</h4>
+    <!-- DESCRIPTION -->
+    <h2>📖 About This Dish</h2>
+    <p>
+      Fish curry is a popular Indian dish made with different types of fish like
+      Hilsa (Elish), Rohu (Rui), Katla, and more. It is rich in flavor and widely enjoyed across regions.
+    </p>
 
-    <!-- We need <dl></dl> tags for Descripstion Lists 
-    and between those we need <dt></dt> and <dd></dd> tags
-    <dt></dt> is used for for term of the Sentence or word 
-    and <dd></dd> is used for giving defination to the term. -->
+  </div>
 
-    <dl>
-      <dt><b>Fish Curry</b></dt>
-      <dd>
-        This is a tasty food dish betweens Indians. There are
-        Elish,Katla,Pabda,Rui and many different fishes available.
-      </dd>
-      <dt><b>Egg Curry</b></dt>
-      <dd>This is also a tasty food dish betweens Indians.</dd>
-    </dl>
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Sayondeep | Built with ❤️</p>
+  </footer>
 
-    <!-- We can also adds ublists via adding <ul></ul> or <ol></ol> betwwen two tags <ul> and </ul>. -->
-    <ul>
-      <li>
-        Fishes
-        <ul>
-          <li>Elish</li>
-          <li>Katla</li>
-          <li>Pabda</li>
-          <li>Rui</li>
-        </ul>
-      </li>
-    </ul>
-  </body>
+</body>
+
 </html>
