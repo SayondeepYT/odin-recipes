@@ -15,6 +15,22 @@
       margin: 0;
       background: #f5f5f5;
       color: #333;
+      transition: 0.3s;
+    }
+
+    /* DARK MODE */
+    body.dark {
+      background: #121212;
+      color: #eee;
+    }
+
+    body.dark .container {
+      background: #1e1e1e;
+    }
+
+    body.dark .back {
+      background: #eee;
+      color: black;
     }
 
     /* HEADER */
@@ -38,6 +54,7 @@
       background: white;
       border-radius: 12px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: 0.3s;
     }
 
     img {
@@ -60,19 +77,32 @@
       margin-bottom: 8px;
     }
 
-    /* BACK BUTTON */
-    .back {
-      display: inline-block;
+    /* TOP BAR */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       margin-bottom: 15px;
-      text-decoration: none;
-      color: white;
-      background: #333;
-      padding: 8px 15px;
-      border-radius: 8px;
     }
 
-    .back:hover {
-      background: #000;
+    /* BUTTONS */
+    .back, .toggle {
+      text-decoration: none;
+      padding: 8px 15px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    .back {
+      background: #333;
+      color: white;
+    }
+
+    .toggle {
+      background: #ff5e62;
+      color: white;
     }
 
     /* FOOTER */
@@ -96,8 +126,11 @@
 
   <div class="container">
 
-    <!-- BACK BUTTON -->
-    <a href="../index.html" class="back">⬅ Back to Home</a>
+    <!-- TOP BAR -->
+    <div class="top-bar">
+      <a href="../index.html" class="back">⬅ Back</a>
+      <button class="toggle" onclick="toggleDark()">🌙 Mode</button>
+    </div>
 
     <!-- IMAGE -->
     <img src="../Recipes Images/Fish_Curry.jpg" alt="Fish Curry">
@@ -140,6 +173,19 @@
   <footer>
     <p>© 2026 Sayondeep | Built with ❤️</p>
   </footer>
+
+  <!-- JS -->
+  <script>
+    function toggleDark() {
+      document.body.classList.toggle("dark");
+      localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+    }
+
+    // Load saved theme
+    if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark");
+    }
+  </script>
 
 </body>
 
